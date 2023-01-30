@@ -75,7 +75,7 @@ export function defineReactive (data, key, val) { //监听对象,监听字段,�
     },
     set (newValue) {
       console.log('要给属性' + key + '赋值')
-      if (val === newValue) return
+      if (val === newValue) return // 赋为旧值不会触发响应式,要注意
       //对于新设的值，也要为其添加监听
       val = newValue;
       observe(newValue);

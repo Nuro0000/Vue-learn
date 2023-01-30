@@ -12,7 +12,7 @@ export default class Dep{
   addSub(sub){
     this.subs.push(sub);
   }
-  //添加依赖
+  //添加依赖--添加观察者实例
   depend(){
     if(Dep.target){
       this.addSub(Dep.target);
